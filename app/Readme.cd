@@ -1,0 +1,5 @@
+#RRS- a small project#
+
+##Take all the files and add them to commit list
+## step 1: Moves files from folder to local repository via commit
+## Step 2 : Moves files from local repo to origin(remote server)
