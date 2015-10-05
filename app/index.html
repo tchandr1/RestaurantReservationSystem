@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Small Business - Start Bootstrap Template</title>
+    <title>Restaurant Reservation System</title>
+    <link rel="stylesheet" href="startbootstrap-small-business-1.0.3/css/style.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -24,19 +25,20 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
+
     <![endif]-->
 
 
 </head>
 
 <body>
-<header >
-    <div ng-include="'headerFooter/header.html'"></div>
-</header>
+        <header >
+            <div ng-include="'headerFooter/header.html'"></div>
+        </header>
 
-<section ng-view>
+        <section ng-view>
 
-</section>
+        </section>
 <!-- Page Content -->
     <div class="container">
 
@@ -93,7 +95,7 @@
 
         <!-- Footer -->
         <footer>
-            <div ng-include="'headerFooter/footer.html'"></div>
+            <div data-ng-include="'headerFooter/footer.html'"></div>
         </footer>
 
     </div>
@@ -103,11 +105,23 @@
     <script src="startbootstrap-small-business-1.0.3/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="startbootstrap-small-business-1.0.3/js/bootstrap.js"></script>
     <script src="startbootstrap-small-business-1.0.3/js/bootstrap.min.js"></script>
 
-<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-<script src="https://code.angularjs.org/1.4.3/angular-route.js"></script>
-<script src="controllers/app.js"></script>
+        <script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+        <script src="https://code.angularjs.org/1.4.6/angular-route.js"></script>
+        <script src="https://code.angularjs.org/1.4.6/angular-messages.js"></script>
+
+    <script src="controllers/app.js"></script>
+    <script src="controllers/aboutUs-Controller.js"></script>
+    <script src="controllers/customer-Reserve-TableController.js"></script>
+    <script src="controllers/owner-Controller.js"></script>
+    <script src="controllers/customers-Display-Controller.js"></script>
+    <script src="controllers/customer-Detail-Controller.js"></script>
+    <script src="controllers/customer-Assign-TableController.js"></script>
+
+
+
 
 </body>
 

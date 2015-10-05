@@ -1,0 +1,31 @@
+<div class="container" >
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>View</th>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>PeopleCount</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in cdVm.addedCustomer">
+            <td><a ng-href="#/customersDisplay/{{p.id}}"><span class="glyphicon glyphicon-user"></span></a></td>
+            <td>{{p.id}}</td>
+            <td>{{p.firstname}}</td>
+            <td>{{p.lastname}}</td>
+            <td>{{p.date}}</td>
+            <td>{{p.time}}</td>
+            <td>{{p.peoplecount}}</td>
+            <td>{{p.phonenumber}}</td>
+            <td>{{p.email}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

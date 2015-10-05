@@ -1,0 +1,89 @@
+<div class="container" ng-controller="CustomersDisplayController as cdVm">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well text-center">
+                <h1>Customer Table Reservation form</h1>
+                <hr>
+                <form name="customerForm" class="form-horizontal" ng-submit="cdVm.addCustomer(customerForm.$valid)" novalidate>
+                    <div class="form-group" >
+                        <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="firstname" class="form-control" id="firstName" placeholder="firstName" ng-model="cdVm.newCustomer.firstname" required>
+                            <div ng-messages="customerForm.firstname.$error" ng-if="customerForm.firstname.$dirty">
+                                <p ng-message="required">Firstname is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="lastname" class="form-control" id="lastName" placeholder="lastName"ng-model="cdVm.newCustomer.lastname" required>
+                            <div ng-messages="customerForm.lastname.$error" ng-class="has-error" ng-if="customerForm.lastname.$dirty" >
+                                <p ng-message="required">LastName is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Date</label>
+                        <div class="col-sm-10">
+                            <input type="date" name="date" class="form-control" id="date" placeholder="date"  ng-model="cdVm.newCustomer.date" required>
+                            <div ng-messages="customerForm.date.$error" ng-class="has-error" ng-if="customerForm.date.$dirty">
+                                <p ng-message="required">Date is required</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Time</label>
+                        <div class="col-sm-10">
+                            <input type="time" name="time" class="form-control" id="time" placeholder="hh:mm ss" ng-model="cdVm.newCustomer.time" required>
+                            <div ng-messages="customerForm.time.$error" ng-class="has-error" ng-if="customerForm.time.$dirty" >
+                                <p ng-message="required">Time is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">People Count</label>
+                        <div class="col-sm-10">
+                            <input type="peoplecount" name="peoplecount" class="form-control" id="peopleCount" placeholder="(+18yrs)" ng-model="cdVm.newCustomer.peoplecount" required>
+                            <div ng-messages="customerForm.peoplecount.$error" ng-class="has-error" ng-if="customerForm.peoplecount.$dirty" >
+                                <p ng-message="required">People Count is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Phone Number</label>
+                        <div class="col-sm-10">
+                            <input type="phoneNumber" name="phonenumber" class="form-control" id="phoneNumber" placeholder="phoneNumber" ng-model="cdVm.newCustomer.phonenumber" required>
+                            <div ng-messages="customerForm.phoneNumber.$error" ng-class="has-error" ng-if="customerForm.phonenumber.$dirty" >
+                                <p ng-message="required">Phone Number is required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email Id</label>
+                        <div class="col-sm-10">
+                            <input type="email" name="email" class="form-control" id="contactDetails" placeholder="Email" ng-model="cdVm.newCustomer.email" required>
+                            <div ng-messages="customerForm.email.$error" ng-class="has-error" ng-if="customerForm.email.$dirty" >
+                                <p ng-message="required">EmailId is required</p>
+                                <p ng-message="email">Email is invalid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-disabled="customerForm.$invalid">Reserve Table</button>
+                    <button class="btn btn-primary">Edit/cancel Reservation</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+
+</div>

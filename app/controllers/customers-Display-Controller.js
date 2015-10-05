@@ -13,7 +13,7 @@
        // init();
        // cdVm.customer = [];
         cdVm.addedCustomer =[];
-           cdVm.customer = [
+        cdVm.customer = [
          {
          "id": 1,
          "firstname": "Leanne ",
@@ -65,11 +65,6 @@
          "email": "Sincere@april.biz"
          }
          ];
-
-
-
-
-
         cdVm.addCustomer = function (isFormValid) {
             console.log("customer added" + isFormValid);
 
@@ -81,10 +76,6 @@
                 CustomersDisplayFactory.updatedData(cdVm.newCustomer);
                 cdVm.newCustomer = null;
             }
-
-
-
-
         }
 
         //cdVM.customer that is being used in customerDisplay.html is getting initialized here from the factory if factory has any data.

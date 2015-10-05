@@ -1,0 +1,56 @@
+<div class="container" ng-controller="CustomersDisplayController as cdVm">
+    <h3>customer Profile</h3>
+    <a ng-href="#/customerTable">AssignTable</a>
+    <br>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Id</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].id}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Firstname</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].firstname}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Lastname</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].lastname}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Date</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].date}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Time</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].time}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Peoplecount</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].peoplecount}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Phonenumber</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].phonenumber}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">{{cdVm.addedCustomer[cdetailVm.cid].email}}</p>
+            </div>
+        </div>
+
+    </form>
+</div>

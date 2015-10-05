@@ -1,0 +1,29 @@
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: #00FF00;
+}
+
+/* selected link */
+a:active {
+    color: green;
+}
+
+.text-warning:focus{
+    color:red;
+}
+
+.has-error
+p{
+    color:red;
+    margin:0;
+}
+
