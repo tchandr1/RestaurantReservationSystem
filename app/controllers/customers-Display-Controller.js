@@ -65,6 +65,8 @@
          "email": "Sincere@april.biz"
          }
          ];
+
+
         cdVm.addCustomer = function (isFormValid) {
             console.log("customer added" + isFormValid);
 

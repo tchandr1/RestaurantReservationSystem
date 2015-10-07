@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="CustomersDisplayController as cdVm">
     <h2 class="title">Table Reservation by Owner</h2>
 
     <table class="table table-striped">
@@ -13,7 +13,7 @@
             <td class="padding-right" ng-bind="row"></td>
             <td class="seat" ng-repeat="col in caVm.cols" ng-click="caVm.seatClicked(row + col)" ng-switch on="caVm.getStatus(row + col)">
                 <img ng-switch-when="selected" src="images/seat_selected.png">
-                <img ng-switch-when="reserved" src="images/seat_reserved.png">
+                <img ng-switch-when="reserved" src="images/seat_reserved.png" >
                 <img ng-switch-default src="images/seat_available.png">
             </td>
         </tr>

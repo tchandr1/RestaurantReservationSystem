@@ -14,23 +14,10 @@
 
 
 
-      /*  function init(){
-            $http({
-                method:'GET',
-                url:'http://jsonplaceholder.typicode.com/users'
-            })
-                .success(function(data){
-                    crVm.customer = data;
-                })
-                .error(function(err){
-                    console.log(err);
-                })
-
-        }*/
-
     }
 
 
 
 })();
+
 

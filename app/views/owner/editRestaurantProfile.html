@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well text-center">
+                <h1>Edit Restaurant Profile</h1>
+                <hr>
+                <form name="restaurantForm" class="form-horizontal" ng-submit="editresVm.addedRestaurant(restaurantForm.$valid)" novalidate>
+                    <div class="form-group" >
+                        <label for="inputEmail3" class="col-sm-2 control-label">Restaurant Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="restaurantName" class="form-control" id="restaurantName" placeholder="restaurantName" ng-model="editresVm.updatedRestaurant.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="address" class="form-control" id="address" placeholder="address" ng-model="editresVm.updatedRestaurant.address" required>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Phone Number</label>
+                        <div class="col-sm-10">
+                            <input type="phoneNumber" name="phonenumber" class="form-control" id="phoneNumber" placeholder="phoneNumber" ng-model="editresVm.updatedRestaurant.phoneNumber" required>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email Id</label>
+                        <div class="col-sm-10">
+                            <input type="email" name="email" class="form-control" id="contactDetails" placeholder="Email" ng-model="editresVm.updatedRestaurant.email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Days Opened</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="days" class="form-control" id="days" placeholder="Monday-Saturday" ng-model="editresVm.updatedRestaurant.days" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Time</label>
+                        <div class="col-sm-10">
+                            <input type="time" name="time" class="form-control" id="time" placeholder="hh:mm ss" ng-model="editresVm.updatedRestaurant.time" required>
+
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary" ng-disabled="restaurantForm.$invalid">Save Changes</button>
+                    <button class="btn btn-primary">Reset</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+
+
+</div>

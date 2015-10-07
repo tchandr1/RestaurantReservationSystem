@@ -43,6 +43,16 @@
                 controller: 'CustomerAssignTable',
                 controllerAs: 'caVm'
             })
+            .when('/restaurantProfile', {
+                templateUrl:'views/owner/restaurantProfile.html',
+                controller:'RestaurantProfileController',
+                controllerAs:'resVm'
+            })
+            .when('/editRestaurantProfile', {
+                templateUrl:'views/owner/editRestaurantProfile.html',
+                controller:'EditRestaurantProfileController',
+                controllerAs:'editresVm'
+            })
             .otherwise({
                 redirectTo: '#'
             });

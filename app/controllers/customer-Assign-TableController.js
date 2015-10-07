@@ -10,7 +10,7 @@
         .controller("CustomerAssignTable",CustomerAssignTableFn)
         .factory("CustomerAssignTableFactory",CustomerAssignTableFactoryFn)
 
-    var reserved = ['A2','A3'];
+    var reserved = [];
     CustomerAssignTableFn.$inject = ['CustomerAssignTableFactory'];
     function CustomerAssignTableFn(CustomerAssignTableFactory) {
         var caVm = this;
@@ -19,7 +19,6 @@
         caVm.cols = [1, 2, 3, 4, 5, 6, 7, 8];
 
         // Set reserved and selected
-       // var reserved = ['A2','A3'];
         console.log("FirstreservedArray:"+reserved);
         var selected = [];
 
@@ -39,7 +38,7 @@
 
         // get seat status
         caVm.getStatus = function(seatPos) {
-            console.log("getStatus function entered");
+          //  console.log("getStatus function entered");
             if(reserved.indexOf(seatPos) > -1) {
                 return 'reserved';
             } else if(selected.indexOf(seatPos) > -1) {
@@ -66,20 +65,18 @@
         //reserve selected
         caVm.reserveSelected = function(){
             console.log("reserveSelected function entered");
+
             reserved = reserved.concat(selected);
            //reserved = selected;
-            console.log("reservedSeats"+selected);
+            console.log("reservedSeats"+reserved);
             CustomerAssignTableFactory.reservedTable(selected);
 
         }
 
         if (CustomerAssignTableFactory.getData()){
-            console.log("if Factory function entered");
-            console.log("if get Data:"+CustomerAssignTableFactory.getData());
-            reserved = reserved.concat(CustomerAssignTableFactory.getData());
+          //  console.log("if Factory function entered");
+             reserved = reserved.concat(CustomerAssignTableFactory.getData());
             //reserved.length = 0;
-            console.log("FactoryreservedArray:"+reserved);
-
 
         }
 
