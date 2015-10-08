@@ -76,7 +76,7 @@
                 //cdVM.customer that is being used in customerDisplay.html is getting initialized here when customer makes a new reservation
                 // so data inserted by customer in reservation form is saved into factory below.
                 CustomersDisplayFactory.updatedData(cdVm.newCustomer);
-                cdVm.newCustomer = null;
+                //cdVm.newCustomer = null;
             }
         }
 

@@ -4,7 +4,6 @@
 (function() {
     'use strict';
 
-
     angular.module('restaurant',['ngRoute','ngMessages']);
 
     angular.module('restaurant').config(moduleConfig);

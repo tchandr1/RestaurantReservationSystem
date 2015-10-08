@@ -7,12 +7,7 @@
     //CustomerReserveTableControllerFn.$inject = [];
     function CustomerReserveTableControllerFn(){
         var crVm = this;
-        //init();
         console.log("Entered CustomerReserveTableController");
-
-
-
-
 
     }
 
