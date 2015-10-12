@@ -15,7 +15,7 @@
 
         cdVm.addedCustomer =[];
 
-       cdVm.customer = [
+     /*  cdVm.customer = [
          {
          "id": 1,
          "firstname": "Leanne ",
@@ -66,7 +66,7 @@
          "phonenumber":"1234567890",
          "email": "Sincere@april.biz"
          }
-         ];
+         ];*/
 
         console.log(" cdVm.customer:"+ cdVm.customer);
 
@@ -95,7 +95,8 @@
         //cdVM.customer that is being used in customerDisplay.html is getting initialized here from the factory if factory has any data.
         if (CustomersDisplayFactory.getData()){
           //  cdVm.customer.push(CustomersDisplayFactory.getData());
-            cdVm.addedCustomer =  cdVm.customer.concat(CustomersDisplayFactory.getData());
+           // cdVm.addedCustomer =  cdVm.customer.concat(CustomersDisplayFactory.getData());
+            cdVm.addedCustomer = CustomersDisplayFactory.getData();
             console.log("cdVm.addedcustomer:"+cdVm.addedCustomer);
           //  console.log(cdVm.addedCustomer[0].id);
         };
