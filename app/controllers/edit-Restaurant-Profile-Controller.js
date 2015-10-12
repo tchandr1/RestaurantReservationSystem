@@ -32,12 +32,17 @@
                     editresVm.updatedResData = RestaurantProfileFactory.getData();
                     console.log("updatedResData:"+editresVm.updatedResData);
                     console.log("Name:"+editresVm.updatedResData.name);
+                    alert("Restaurant Information is set");
 
                 }
 
 
             }
 
+        }
+
+        editresVm.reset = function(){
+          editresVm.updatedRestaurant = null;
         }
 
 

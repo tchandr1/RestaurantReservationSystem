@@ -3,19 +3,20 @@
  */
 (function(){
     angular.module('restaurant')
-           .controller("CustomersDisplayController",CustomersDisplayControllerFn)
-           .factory("CustomersDisplayFactory",CustomersDisplayFactoryFn)
+        .controller("CustomersDisplayController",CustomersDisplayControllerFn)
+        .factory("CustomersDisplayFactory",CustomersDisplayFactoryFn)
         .factory("UpdatedCustomersDisplayFactory",UpdatedCustomersDisplayFactoryFn)
+        .factory("CustomerDatabase",CustomerDatabaseFactoryFn)
         .factory("CustomerAssignTableFactory");
 
-    CustomersDisplayControllerFn.$inject = ['CustomersDisplayFactory','UpdatedCustomersDisplayFactory','CustomerAssignTableFactory'];
-    function CustomersDisplayControllerFn(CustomersDisplayFactory,UpdatedCustomersDisplayFactory,CustomerAssignTableFactory) {
+    CustomersDisplayControllerFn.$inject = ['CustomersDisplayFactory','UpdatedCustomersDisplayFactory','CustomerAssignTableFactory','CustomerDatabase'];
+    function CustomersDisplayControllerFn(CustomersDisplayFactory,UpdatedCustomersDisplayFactory,CustomerAssignTableFactory,CustomerDatabase) {
         console.log("CustomersDisplayControllerFn");
         var cdVm = this;
 
         cdVm.addedCustomer =[];
 
-     /*  cdVm.customer = [
+        /*  cdVm.customer = [
          {
          "id": 1,
          "firstname": "Leanne ",
@@ -80,13 +81,14 @@
             if (isFormValid) {
 
                 if(CustomerAssignTableFactory.getLength()>40)
-               alert("The tables are full, Do u want to be in the waiting list ?")
+                    alert("The tables are full, Do u want to be in the waiting list ?")
 
                 cdVm.newCustomer.id = cdVm.addedCustomer.length + 1;
-               //cdVM.customer that is being used in customerDisplay.html is getting initialized here when customer makes a new reservation
+                //cdVM.customer that is being used in customerDisplay.html is getting initialized here when customer makes a new reservation
                 // so data inserted by customer in reservation form is saved into factory below.
                 CustomersDisplayFactory.updatedData(cdVm.newCustomer);
-                cdVm.newCustomer = null;
+                // cdVm.newCustomer = null;
+                alert("Your table is reserved!");
 
 
             }
@@ -94,19 +96,19 @@
 
         //cdVM.customer that is being used in customerDisplay.html is getting initialized here from the factory if factory has any data.
         if (CustomersDisplayFactory.getData()){
-          //  cdVm.customer.push(CustomersDisplayFactory.getData());
-           // cdVm.addedCustomer =  cdVm.customer.concat(CustomersDisplayFactory.getData());
+            //  cdVm.customer.push(CustomersDisplayFactory.getData());
+            // cdVm.addedCustomer =  cdVm.customer.concat(CustomersDisplayFactory.getData());
             cdVm.addedCustomer = CustomersDisplayFactory.getData();
             console.log("cdVm.addedcustomer:"+cdVm.addedCustomer);
-          //  console.log(cdVm.addedCustomer[0].id);
+            //  console.log(cdVm.addedCustomer[0].id);
         };
 
-    /*    if (UpdatedCustomersDisplayFactory.getData()){
-          console.log("if UpdatedCustomersDisplayFactory.getData() entered")
-            cdVm.addedCustomer[i]=UpdatedCustomersDisplayFactory.getData();
-            console.log(cdVm.addedCustomer[0]);
+        /*    if (UpdatedCustomersDisplayFactory.getData()){
+         console.log("if UpdatedCustomersDisplayFactory.getData() entered")
+         cdVm.addedCustomer[i]=UpdatedCustomersDisplayFactory.getData();
+         console.log(cdVm.addedCustomer[0]);
 
-        };*/
+         };*/
 
 
 
@@ -115,10 +117,10 @@
             console.log("Prepopulate customers");
             console.log(cc);
 
-          //  console.log(cdVm.addedCustomer[cc].firstname);
-          //  console.log(cdVm.addedCustomer);
-          cdVm.newCustomer=cdVm.addedCustomer[cc];
-          console.log( cdVm.newCustomer);
+            //  console.log(cdVm.addedCustomer[cc].firstname);
+            //  console.log(cdVm.addedCustomer);
+            cdVm.newCustomer=cdVm.addedCustomer[cc];
+            console.log( cdVm.newCustomer);
 
 
         }
@@ -130,8 +132,9 @@
                 if (cdVm.addedCustomer[i].firstname.localeCompare(cdVm.newCustomer.firstname)== 0) {
                     console.log("Element exists");
                     UpdatedCustomersDisplayFactory.updatedData(cdVm.newCustomer);
-                   cdVm.addedCustomer[i]=UpdatedCustomersDisplayFactory.getData();
+                    cdVm.addedCustomer[i]=UpdatedCustomersDisplayFactory.getData();
                     console.log(cdVm.addedCustomer[0]);
+                    alert("Your reservation is updated!");
 
 
                 }
@@ -141,9 +144,9 @@
     }
 
     function CustomersDisplayFactoryFn() {
-         var custData ;
+        var custData ;
         var custDataArray = [];
-         return {
+        return {
             updatedData: function (newData) {
                 console.log("CustomersDisplayFactoryFn Entered");
                 custData = newData;
@@ -151,10 +154,10 @@
                 console.log("Factory forms:"+custDataArray);
             },
 
-             getData: function () {
-                 console.log("CustomersDisplayFactoryFn Entered");
-                 return custDataArray;
-             }
+            getData: function () {
+                console.log("CustomersDisplayFactoryFn Entered");
+                return custDataArray;
+            }
         }
     }
 
@@ -175,6 +178,17 @@
             }
         }
     }
+
+    CustomerDatabaseFactoryFn.$inject = ['$resource']
+    function CustomerDatabaseFactoryFn($resource){
+        console.log("CustomerDataFactory from Database Entered");
+        return $resource('http://localhost:8080/RestaurantReservationBackend/webresources/customers',{},{
+            query: {
+                method:'GET', isArray:true
+            }
+        });
+    }
+
 
 
 

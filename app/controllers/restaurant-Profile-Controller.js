@@ -22,6 +22,7 @@
 
         if(RestaurantProfileFactory.getData()) {
             resVm.data = RestaurantProfileFactory.getData();
+
         }
         console.log("resVm.data:"+resVm.data);
         console.log("resVm.data:"+resVm.data.name);
