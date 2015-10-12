@@ -12,9 +12,13 @@
         var cdetailVm = this;
         console.log("CustomerDetailControllerFn Entered");
         console.log("$routeParams:"+$routeParams);
+        console.log($routeParams);
         console.log("$routeParams:"+$routeParams.customerid);
+
         cdetailVm.cid = $routeParams.customerid - 1;
-        $http({
+
+
+     /*   $http({
             method:'GET',
             url:'http://localhost:63342/RestaurantReservationSystem/app/jsonFile/customers.json'
 
@@ -27,7 +31,9 @@
             })
             .error(function(err){
                 console.log(err);
-            })
+            })*/
+
+
 
 
 

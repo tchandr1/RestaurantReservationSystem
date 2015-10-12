@@ -17,6 +17,7 @@
         // Init layout
         caVm.rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
         caVm.cols = [1, 2, 3, 4, 5, 6, 7, 8];
+        var i,j;
 
         // Set reserved and selected
         console.log("FirstreservedArray:"+reserved);
@@ -73,6 +74,21 @@
 
         }
 
+        caVm.autoReserveSelected = function(){
+            console.log("autoReserveSelected function entered");
+           loop1: for(i=0;i<caVm.rows.length;i++){
+           loop2:     for(j=0;j<caVm.cols.length;j++){
+                            if(reserved.indexOf(caVm.rows[i]+caVm.cols[j]) == -1){
+                            console.log("Not reserved");
+                            reserved.push(caVm.rows[i]+caVm.cols[j]);
+                            break loop1;
+                    }
+
+                }
+            }
+
+        }
+
         if (CustomerAssignTableFactory.getData()){
           //  console.log("if Factory function entered");
              reserved = reserved.concat(CustomerAssignTableFactory.getData());
@@ -92,6 +108,9 @@
             getData:function(){
                 return reservedSeats;
 
+            },
+            getLength:function(){
+                return reservedSeats.length;
             }
         }
     }

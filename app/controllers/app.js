@@ -4,7 +4,7 @@
 (function() {
     'use strict';
 
-    angular.module('restaurant',['ngRoute','ngMessages']);
+    angular.module('restaurant',['ngRoute','ngMessages','ngResource','ui.bootstrap']);
 
     angular.module('restaurant').config(moduleConfig);
 
@@ -24,8 +24,8 @@
             })
             .when('/customerReservation', {
                 templateUrl:'views/customers/customersSignUp.html',
-                controller: 'CustomerReserveTableController',
-                controllerAs: 'crVm'
+                controller: 'CustomersDisplayController',
+                controllerAs: 'cdVm'
             })
             .when('/customersDisplay', {
                 templateUrl:'views/customers/customersDisplay.html',
@@ -56,5 +56,9 @@
                 redirectTo: '#'
             });
     }
+
+   // angular.module('restaurant').factory('customerData',CustomerDataFactory);
+
+
 
 })();
