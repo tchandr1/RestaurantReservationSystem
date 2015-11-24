@@ -11,4 +11,6 @@ Database:MYSQL
             Customer can edit an existing reservation using confirmation code.
 Owner: logs in using his credentials. Owner view list of reservations and reserves table.There is auto assign feature too to reserve table for the customers.
 
+Backend code can be found on RestaurantReservationSystemBackend folder.
+
 
